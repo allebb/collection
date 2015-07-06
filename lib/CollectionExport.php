@@ -64,17 +64,6 @@ class CollectionExport
     }
 
     /**
-     * Iterate over the collection
-     * @param \callable $callback Callback
-     */
-    public function each(callable $callback)
-    {
-        foreach ($this->collection as $item) {
-            $callback($item);
-        }
-    }
-
-    /**
      * Default return value on the object, will return the collection array.
      * @return array
      */

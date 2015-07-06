@@ -34,9 +34,13 @@ class Collection
      * @param array $items
      * @return \Ballen\Collection
      */
-    public function reset(array $items)
+    public function reset($items = null)
     {
-        $this->items = $items;
+        if ((func_get_args() > 0) && is_array($items)) {
+            $this->items = $items;
+        } else {
+            $this->items = [];
+        }
         return $this;
     }
 
@@ -54,12 +58,16 @@ class Collection
     /**
      * Push a new item (or collection of items) into the collection onto the end
      * of the collection.
-     * @param array $items
+     * @param mixed $items
      * @return \Ballen\Collection
      */
-    public function push(array $items)
+    public function push($items)
     {
-        $this->items = array_merge($this->items, $items);
+        if (!is_array($items)) {
+            $this->items = array_merge($this->items, [$items]);
+        } else {
+            $this->items = array_merge($this->items, $items);
+        }
         return $this;
     }
 
@@ -93,5 +101,20 @@ class Collection
     public function count()
     {
         return count($this->items);
+    }
+
+    /**
+     * Iterate over each of the items in the collection and execute the callback.
+     * @param callable $callback
+     * @return \Ballen\Collection\Collection
+     */
+    public function each(callable $callback)
+    {
+        foreach ($this->items as $key => $item) {
+            if ($callback($key, $item) === false) {
+                break;
+            }
+        }
+        return $this;
     }
 }
