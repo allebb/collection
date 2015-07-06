@@ -67,4 +67,53 @@ class CollectionlTest extends PHPUnit_Framework_TestCase
         $collection = new Collection(['one', 'two', 'three', 'four']);
         $this->assertEquals(4, $collection->count());
     }
+
+    public function testGetFirstFromCollection()
+    {
+        $collection = new Collection(['one', 'two', 'three', 'four']);
+        $this->assertEquals('one', $collection->first());
+    }
+
+    public function testGetLastFromCollection()
+    {
+        $collection = new Collection(['one', 'two', 'three', 'four']);
+        $this->assertEquals('four', $collection->last());
+    }
+
+    public function testToString()
+    {
+        $collection = new Collection(['one' => 1, 'two' => 2, 'three' => 3, 'four' => 4]);
+        $this->assertEquals('{"one":1,"two":2,"three":3,"four":4}', (string) $collection);
+    }
+
+    public function testActualIsEmpty()
+    {
+        $collection = new Collection([]);
+        $this->assertTrue($collection->isEmpty());
+    }
+
+    public function testNotIsEmpty()
+    {
+        $collection = new Collection(['one', 'two', 'three', 'four']);
+        $this->assertFalse($collection->isEmpty());
+    }
+
+    public function testShiftCollection()
+    {
+        $collection = new Collection(['one', 'two', 'three', 'four']);
+        $this->assertEquals('one', $collection->shift());
+        $this->assertEquals(['two', 'three', 'four'], $collection->all()->toArray());
+    }
+
+    public function testPopCollection()
+    {
+        $collection = new Collection(['one', 'two', 'three', 'four']);
+        $this->assertEquals(['one', 'two', 'three'], $collection->pop()->all()->toArray());
+    }
+
+    public function testImplodeCollection()
+    {
+        $collection = new Collection(['one', 'two', 'three', 'four']);
+        $this->assertEquals('one,two,three,four', $collection->implode(','));
+    }
 }

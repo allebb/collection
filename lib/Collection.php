@@ -1,5 +1,7 @@
 <?php namespace Ballen\Collection;
 
+use ArrayIterator;
+
 /**
  * Collection
  * 
@@ -56,7 +58,7 @@ class Collection
     }
 
     /**
-     * Push a new item (or collection of items) into the collection onto the end
+     * Push a new item (or array of items) into the collection onto the end
      * of the collection.
      * @param mixed $items
      * @return \Ballen\Collection
@@ -68,6 +70,35 @@ class Collection
         } else {
             $this->items = array_merge($this->items, $items);
         }
+        return $this;
+    }
+
+    /**
+     * Push an item (or array of items) onto the beginning of the collection.
+     * @param  mixed  $items
+     * @return $this
+     */
+    public function prepend($items)
+    {
+        array_unshift($this->items, $items);
+        return $this;
+    }
+
+    /**
+     * Get and remove the first item from the collection.
+     * @return mixed
+     */
+    public function shift()
+    {
+        return array_shift($this->items);
+    }
+
+    /**
+     * Pops an item off the end of the collection.
+     */
+    public function pop()
+    {
+        array_pop($this->items);
         return $this;
     }
 
@@ -116,5 +147,77 @@ class Collection
             }
         }
         return $this;
+    }
+
+    /**
+     * Return the first item in the collection.
+     * @return type
+     */
+    public function first()
+    {
+        return $this->items[0];
+    }
+
+    /**
+     * Returns the last item in the collection.
+     * @return type
+     */
+    public function last()
+    {
+        return array_reverse($this->items)[0];
+    }
+
+    /**
+     * Shuffles (randomises) the items in the collection.
+     * @return \Ballen\Collection\Collection
+     */
+    public function shuffle()
+    {
+        shuffle($this->items);
+        return $this;
+    }
+
+    /**
+     * Converts the colletion into a string.
+     */
+    public function implode($glue = ' ')
+    {
+        return implode($glue, $this->items);
+    }
+
+    /**
+     * Checks to see if the collection is empty.
+     * @return boolean
+     */
+    public function isEmpty()
+    {
+        return empty($this->items);
+    }
+
+    /**
+     * Get an iterator for the collection.
+     * @return \ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new ArrayIterator($this->items);
+    }
+
+    /**
+     * Converts the collection to it's string representation (JSON)
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toJson();
+    }
+
+    /**
+     * Converts the collection to JSON.
+     * @return type
+     */
+    public function toJson()
+    {
+        return json_encode($this->items);
     }
 }
