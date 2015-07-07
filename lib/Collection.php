@@ -24,6 +24,10 @@ class Collection
      */
     private $items = [];
 
+    /**
+     * Create new instance of a Collection.
+     * @param array $items
+     */
     public function __construct($items = null)
     {
         if (!is_null($items) && is_array($items)) {
@@ -34,7 +38,7 @@ class Collection
     /**
      * Resets the collection with the specified array content.
      * @param array $items
-     * @return \Ballen\Collection
+     * @return Collection
      */
     public function reset($items = null)
     {
@@ -48,8 +52,8 @@ class Collection
 
     /**
      * Set an item or items into the the collection.
-     * @param string|array $items
-     * @return \Ballen\Collection
+     * @param mixed $item
+     * @return Collection
      */
     public function put($key, $item)
     {
@@ -60,27 +64,27 @@ class Collection
     /**
      * Push a new item (or array of items) into the collection onto the end
      * of the collection.
-     * @param mixed $items
-     * @return \Ballen\Collection
+     * @param mixed $item
+     * @return Collection
      */
-    public function push($items)
+    public function push($item)
     {
-        if (!is_array($items)) {
-            $this->items = array_merge($this->items, [$items]);
+        if (!is_array($item)) {
+            $this->items = array_merge($this->items, [$item]);
         } else {
-            $this->items = array_merge($this->items, $items);
+            $this->items = array_merge($this->items, $item);
         }
         return $this;
     }
 
     /**
      * Push an item (or array of items) onto the beginning of the collection.
-     * @param  mixed  $items
-     * @return $this
+     * @param  mixed  $item
+     * @return Collection
      */
-    public function prepend($items)
+    public function prepend($item)
     {
-        array_unshift($this->items, $items);
+        array_unshift($this->items, $item);
         return $this;
     }
 
@@ -95,6 +99,7 @@ class Collection
 
     /**
      * Pops an item off the end of the collection.
+     * @return Collection
      */
     public function pop()
     {
@@ -104,7 +109,7 @@ class Collection
 
     /**
      * Get all items from the collection.
-     * @return \Ballen\CollectionExport
+     * @return CollectionExport
      */
     public function all()
     {
@@ -137,7 +142,7 @@ class Collection
     /**
      * Iterate over each of the items in the collection and execute the callback.
      * @param callable $callback
-     * @return \Ballen\Collection\Collection
+     * @return Collection
      */
     public function each(callable $callback)
     {
@@ -151,7 +156,7 @@ class Collection
 
     /**
      * Return the first item in the collection.
-     * @return type
+     * @return  mixed
      */
     public function first()
     {
@@ -160,7 +165,7 @@ class Collection
 
     /**
      * Returns the last item in the collection.
-     * @return type
+     * @return mixed
      */
     public function last()
     {
@@ -169,7 +174,7 @@ class Collection
 
     /**
      * Shuffles (randomises) the items in the collection.
-     * @return \Ballen\Collection\Collection
+     * @return Collection
      */
     public function shuffle()
     {
@@ -179,6 +184,7 @@ class Collection
 
     /**
      * Converts the colletion into a string.
+     * @return string
      */
     public function implode($glue = ' ')
     {
@@ -214,7 +220,7 @@ class Collection
 
     /**
      * Converts the collection to JSON.
-     * @return type
+     * @return string
      */
     public function toJson()
     {
