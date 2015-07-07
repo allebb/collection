@@ -20,4 +20,4 @@ $fruits->each(function($key, $value) use ($eol) {
 
 // We can reset our fruit collection (to either a new list or emtpy it entirely)
 $fruits->reset();
-echo 'Now that we\'ve reset the collection we now have' . $fruits->count() . ' items!';
+echo 'Now that we\'ve reset the collection we now have ' . $fruits->count() . ' items!';

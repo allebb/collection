@@ -116,4 +116,40 @@ class CollectionlTest extends PHPUnit_Framework_TestCase
         $collection = new Collection(['one', 'two', 'three', 'four']);
         $this->assertEquals('one,two,three,four', $collection->implode(','));
     }
+
+    public function testShuffleCollection()
+    {
+        $collection = new Collection(['one', 'two', 'three', 'four']);
+        $this->assertNotEquals(['one', 'two', 'three', 'four'], $collection->shuffle());
+    }
+
+    public function testPrependCollection()
+    {
+        $collection = new Collection(['two', 'three', 'four']);
+        $collection->prepend('one');
+        $this->assertEquals(['one', 'two', 'three', 'four'], $collection->all()->toArray());
+    }
+
+    public function testEachOverCollection()
+    {
+        $collection = new Collection(['two', 'three', 'four']);
+        $this->expectOutputString('TWO THREE FOUR ', $collection->each(function($key, $value) {
+                echo strtoupper($value) . ' ';
+            })
+        );
+    }
+
+    public function testEachOverBreakCollection()
+    {
+        $collection = new Collection(['two', 'three', 'four']);
+        $this->assertInstanceOf('Ballen\Collection\Collection', $collection->each(function($key, $value) {
+                return false;
+            }));
+    }
+
+    public function testGetIterator()
+    {
+        $fruits = new Collection(['strawberry' => 'Red', 'orange' => 'Orange', 'lemon' => 'Yellow', 'grape' => 'Purple']);
+        $this->assertEquals('Red', $fruits->getIterator()['strawberry']);
+    }
 }
