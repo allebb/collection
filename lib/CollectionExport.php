@@ -64,11 +64,11 @@ class CollectionExport
     }
 
     /**
-     * Default return value on the object, will return the collection array.
-     * @return array
+     * Default return value on the object, will return the collection as JSON representation.
+     * @return string
      */
     public function __toString()
     {
-        return $this->collection;
+        return $this->toJson();
     }
 }
