@@ -18,6 +18,10 @@ $fruits->each(function($key, $value) use ($eol) {
     echo 'An ' . $key . ' is ' . $value . $eol;
 });
 
+echo "The first fruit is: " . $fruits->first();
+
+echo "The last fruit is: " . $fruits->last();
+
 // We can reset our fruit collection (to either a new list or emtpy it entirely)
 $fruits->reset();
 echo 'Now that we\'ve reset the collection we now have ' . $fruits->count() . ' items!';

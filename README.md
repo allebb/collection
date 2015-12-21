@@ -21,7 +21,7 @@ This library is unit tested against PHP 5.3, 5.4, 5.5, 5.6, HHVM and 7.0!
 License
 -------
 
-This client library is released under the GPLv2 license, a [copy of the license](https://github.com/bobsta63/collection/blob/master/LICENSE) is provided in this package.
+This client library is released under the MIT license, a [copy of the license](https://github.com/bobsta63/dodns/blob/master/LICENSE) is provided in this package.
 
 Setup
 -----
@@ -45,17 +45,26 @@ Then install the package like so:
 Usage
 -----
 
-Examples
---------
+Example usage
+-------------
 
-TBC
+A simple example of adding, sorting and iterating data in a collection.
+
+```php
+<?php
+
+use Ballen\Collection\Collection;
+
+
+
+```
 
 Tests and coverage
 ------------------
 
-This library is fully unit tested using PHPUnit.
+This library is fully unit tested using [PHPUnit](https://phpunit.de/).
 
-I use TravisCI for continuous integration, which triggers tests for PHP 5.3, 5.4, 5.5, 5.6, 7.0 and HHVM every time a commit is pushed.
+I use [TravisCI](https://travis-ci.org/) for continuous integration, which triggers tests for PHP 5.3, 5.4, 5.5, 5.6, 7.0 and HHVM every time a commit is pushed.
 
 If you wish to run the tests yourself you should run the following:
 

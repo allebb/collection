@@ -101,12 +101,40 @@ class Collection
     }
 
     /**
-     * Pops an item off the end of the collection.
+     * Pop an item off the end of the collection.
      * @return Collection
      */
     public function pop()
     {
         array_pop($this->items);
+        return $this;
+    }
+
+    /**
+     * Pull an item from the collection and remove it from the collection.
+     * @param string $key
+     * @return mixed
+     */
+    public function pull($key)
+    {
+        if ($this->has($key)) {
+            $pulled = $this->get($key);
+            $this->remove($key);
+            return $pulled;
+        }
+        return false;
+    }
+
+    /**
+     * Removes an item from the collection.
+     * @param string $key
+     * @return \Ballen\Collection\Collection
+     */
+    public function remove($key)
+    {
+        if ($this->has($key)) {
+            unset($this->items[$key]);
+        }
         return $this;
     }
 
@@ -168,12 +196,21 @@ class Collection
     }
 
     /**
+     * Retrieve a random item from the collection.
+     * @return mixed
+     */
+    public function random()
+    {
+        return array_rand($this->items);
+    }
+
+    /**
      * Return the first item in the collection.
      * @return  mixed
      */
     public function first()
     {
-        return $this->items[0];
+        return array_values($this->items)[0];
     }
 
     /**
@@ -182,7 +219,7 @@ class Collection
      */
     public function last()
     {
-        return array_reverse($this->items)[0];
+        return array_values($this->items)[$this->count() - 1];
     }
 
     /**
