@@ -78,7 +78,7 @@ class CollectionlTest extends PHPUnit_Framework_TestCase
     public function testCheckHasKeyFailureNumericFromCollection()
     {
         $collection = new Collection([1 => 'Bobby', 2 => 'Barry']);
-        $this->assertTrue($collection->has(3));
+        $this->assertFalse($collection->has(3));
     }
 
     public function testCheckHasKeySuccessStringromCollection()
@@ -90,7 +90,7 @@ class CollectionlTest extends PHPUnit_Framework_TestCase
     public function testCheckHasKeyFailureStringromCollection()
     {
         $collection = new Collection(['name1' => 'Bobby', 'name2' => 'Barry']);
-        $this->assertTrue($collection->has('name3'));
+        $this->assertFalse($collection->has('name3'));
     }
 
     public function testGetFirstFromCollection()
