@@ -1,5 +1,4 @@
 <?php
-
 use \PHPUnit_Framework_TestCase;
 use Ballen\Collection\Collection;
 
@@ -176,5 +175,40 @@ class CollectionlTest extends PHPUnit_Framework_TestCase
     {
         $fruits = new Collection(['strawberry' => 'Red', 'orange' => 'Orange', 'lemon' => 'Yellow', 'grape' => 'Purple']);
         $this->assertEquals('Red', $fruits->getIterator()['strawberry']);
+    }
+
+    public function testRemoveAlphaItem()
+    {
+        $fruits = new Collection(['strawberry' => 'Red', 'orange' => 'Orange', 'lemon' => 'Yellow', 'grape' => 'Purple']);
+        $this->assertEquals(['strawberry' => 'Red', 'lemon' => 'Yellow', 'grape' => 'Purple'], $fruits->remove('orange')->all()->toArray());
+    }
+
+    public function testRemoveNumericItem()
+    {
+        $fruits = new Collection(['Strawberry', 'Orange', 'Yellow', 'Purple']);
+        $this->assertArrayNotHasKey(2, $fruits->remove(2)->all()->toArray());
+    }
+
+    public function testPopItem()
+    {
+        $fruits = new Collection(['strawberry', 'Orange', 'Yellow', 'Purple']);
+        $this->assertEquals(['strawberry', 'Orange', 'Yellow'], $fruits->pop()->all()->toArray());
+    }
+
+    public function testPullItem()
+    {
+        $fruits = new Collection(['strawberry', 'Orange', 'Yellow', 'Purple']);
+        $this->assertEquals('Orange', $fruits->pull(1));
+    }
+
+    public function testRandomItem()
+    {
+        $fruits = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        $random = $fruits->random();
+        $assertion = false;
+        if (($random > 0) && ($random <= 10)) {
+            $assertion = true;
+        }
+        $this->assertTrue($assertion, $random);
     }
 }

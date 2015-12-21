@@ -113,7 +113,7 @@ class Collection
     /**
      * Pull an item from the collection and remove it from the collection.
      * @param string $key
-     * @return mixed
+     * @return mixed|false
      */
     public function pull($key)
     {
@@ -133,6 +133,7 @@ class Collection
     public function remove($key)
     {
         if ($this->has($key)) {
+            $this->items[$key] = null;
             unset($this->items[$key]);
         }
         return $this;
@@ -149,7 +150,7 @@ class Collection
 
     /**
      * Checks if the collection has a the specified key set.
-     * @param mixed $key The key name to check if it exists.
+     * @param string $key The key name to check if it exists.
      * @return boolean
      */
     public function has($key)
