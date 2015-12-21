@@ -1,4 +1,5 @@
 <?php
+
 use \PHPUnit_Framework_TestCase;
 use Ballen\Collection\Collection;
 
@@ -66,6 +67,30 @@ class CollectionlTest extends PHPUnit_Framework_TestCase
     {
         $collection = new Collection(['one', 'two', 'three', 'four']);
         $this->assertEquals(4, $collection->count());
+    }
+
+    public function testCheckHasKeySuccessNumericFromCollection()
+    {
+        $collection = new Collection([1 => 'Bobby', 2 => 'Barry']);
+        $this->assertTrue($collection->has(1));
+    }
+
+    public function testCheckHasKeyFailureNumericFromCollection()
+    {
+        $collection = new Collection([1 => 'Bobby', 2 => 'Barry']);
+        $this->assertTrue($collection->has(3));
+    }
+
+    public function testCheckHasKeySuccessStringromCollection()
+    {
+        $collection = new Collection(['name1' => 'Bobby', 'name2' => 'Barry']);
+        $this->assertTrue($collection->has('name1'));
+    }
+
+    public function testCheckHasKeyFailureStringromCollection()
+    {
+        $collection = new Collection(['name1' => 'Bobby', 'name2' => 'Barry']);
+        $this->assertTrue($collection->has('name3'));
     }
 
     public function testGetFirstFromCollection()

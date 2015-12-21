@@ -1,4 +1,6 @@
-<?php namespace Ballen\Collection;
+<?php
+
+namespace Ballen\Collection;
 
 use ArrayIterator;
 
@@ -52,6 +54,7 @@ class Collection
 
     /**
      * Set an item or items into the the collection.
+     * @param mixed $key
      * @param mixed $item
      * @return Collection
      */
@@ -114,6 +117,16 @@ class Collection
     public function all()
     {
         return new CollectionExport($this->items);
+    }
+
+    /**
+     * Checks if the collection has a the specified key set.
+     * @param mixed $key The key name to check if it exists.
+     * @return boolean
+     */
+    public function has($key)
+    {
+        return isset($this->items[$key]);
     }
 
     /**
