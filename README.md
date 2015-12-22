@@ -45,9 +45,6 @@ Then install the package like so:
 Usage
 -----
 
-Example usage
--------------
-
 A simple example of adding, sorting and iterating data in a collection.
 
 ```php
