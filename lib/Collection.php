@@ -1,6 +1,4 @@
-<?php
-
-namespace Ballen\Collection;
+<?php namespace Ballen\Collection;
 
 use ArrayIterator;
 
@@ -265,6 +263,6 @@ class Collection
      */
     public function __toString()
     {
-        return $this->toJson();
+        return $this->all()->toJson();
     }
 }
