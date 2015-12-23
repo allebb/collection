@@ -6,12 +6,12 @@
  * traditional array data structure. 
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
- * @version 1.0.0
- * @license http://opensource.org/licenses/GPL-2.0
+ * @license https://opensource.org/licenses/MIT
  * @link https://github.com/bobsta63/collection
  * @link http://www.bobbyallen.me
  *
  */
+
 /* * *****************************************************************************
  * THIS FILE SHOULD BE USED FOR AUTOMATICALLY LOADING THIS LIBRARY WHEN YOU ARE
  *  USING IT "STANDALONE" AND NOT USING COMPOSER OR ANOTHER PACKAGE MANAGER.

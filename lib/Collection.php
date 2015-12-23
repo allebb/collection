@@ -11,8 +11,7 @@ use ArrayIterator;
  * traditional array data structure. 
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
- * @version 1.0.0
- * @license http://opensource.org/licenses/GPL-2.0
+ * @license https://opensource.org/licenses/MIT
  * @link https://github.com/bobsta63/collection
  * @link http://www.bobbyallen.me
  *
@@ -267,14 +266,5 @@ class Collection
     public function __toString()
     {
         return $this->toJson();
-    }
-
-    /**
-     * Converts the collection to JSON.
-     * @return string
-     */
-    public function toJson()
-    {
-        return json_encode($this->items);
     }
 }

@@ -46,3 +46,9 @@ echo '<p>Randomised our order now looks like: ' . $cars->all()->toJson().'</p>';
 
 // We now have zero items in our collection...
 echo '<p>' .$cars->count(). '</p>';
+
+// Lets iterate over the collection...
+echo 'The following cars are in our collection...';
+foreach($cars->all()->toArray() as $key => $value){
+    echo '<p>' .$value. '</p>';
+}
