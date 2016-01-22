@@ -201,6 +201,12 @@ class CollectionlTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('Orange', $fruits->pull(1));
     }
 
+    public function testPullItemReturnsFalse()
+    {
+        $fruits = new Collection(['strawberry', 'Orange', 'Yellow', 'Purple']);
+        $this->assertFalse($fruits->pull(5));
+    }
+
     public function testRandomItem()
     {
         $fruits = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
