@@ -1,6 +1,5 @@
 {
     "name": "ballen/collection",
-    "version": "1.0.3",
     "description": "A Collection library which provides OOP replacement for the traditional array data structure.",
     "type": "library",
     "keywords": ["collection", "list", "array"],
