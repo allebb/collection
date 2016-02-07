@@ -158,7 +158,7 @@ class Collection
     /**
      * Get a specific item from the collection.
      * @param string $key The collection (array) key to return.
-     * @param string $default Optional default value if the key doesn't exist (defaulted to false)
+     * @param mixed $default Optional default value if the key doesn't exist (defaulted to false)
      * @return string
      */
     public function get($key, $default = false)
