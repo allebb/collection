@@ -1,4 +1,5 @@
-<?php namespace Ballen\Collection;
+<?php
+namespace Ballen\Collection;
 
 use ArrayIterator;
 
@@ -10,8 +11,8 @@ use ArrayIterator;
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
  * @license https://opensource.org/licenses/MIT
- * @link https://github.com/bobsta63/collection
- * @link http://www.bobbyallen.me
+ * @link https://github.com/allebb/collection
+ * @link http://bobbyallen.me
  *
  */
 class Collection
@@ -41,10 +42,9 @@ class Collection
      */
     public function reset($items = null)
     {
+        $this->items = [];
         if ((func_get_args() > 0) && is_array($items)) {
             $this->items = $items;
-        } else {
-            $this->items = [];
         }
         return $this;
     }
@@ -71,9 +71,9 @@ class Collection
     {
         if (!is_array($item)) {
             $this->items = array_merge($this->items, [$item]);
-        } else {
-            $this->items = array_merge($this->items, $item);
+            return $this;
         }
+        $this->items = array_merge($this->items, $item);
         return $this;
     }
 
@@ -158,10 +158,10 @@ class Collection
     /**
      * Get a specific item from the collection.
      * @param string $key The collection (array) key to return.
-     * @param mixed $default Optional default value if the key doesn't exist (defaulted to false)
-     * @return string
+     * @param mixed $default Optional default value if the key doesn't exist (defaulted to null)
+     * @return mixed
      */
-    public function get($key, $default = false)
+    public function get($key, $default = null)
     {
         if (!isset($this->items[$key])) {
             return $default;
@@ -231,7 +231,7 @@ class Collection
     }
 
     /**
-     * Converts the colletion into a string.
+     * Converts the collection into a string.
      * @return string
      */
     public function implode($glue = ' ')

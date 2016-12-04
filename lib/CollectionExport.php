@@ -1,4 +1,5 @@
-<?php namespace Ballen\Collection;
+<?php
+namespace Ballen\Collection;
 
 /**
  * Collection
@@ -8,8 +9,8 @@
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
  * @license https://opensource.org/licenses/MIT
- * @link https://github.com/bobsta63/collection
- * @link http://www.bobbyallen.me
+ * @link https://github.com/allebb/collection
+ * @link http://bobbyallen.me
  *
  */
 class CollectionExport

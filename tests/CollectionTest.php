@@ -211,7 +211,7 @@ class CollectionlTest extends PHPUnit_Framework_TestCase
     {
         $fruits = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
         $random = $fruits->random();
-        $assertion = false;
+        $assertion = null;
         if (($random > 0) && ($random <= 10)) {
             $assertion = true;
         }
