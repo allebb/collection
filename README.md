@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/allebb/collection.svg)](https://travis-ci.org/allebb/collection)
 [![Code Coverage](https://scrutinizer-ci.com/g/allebb/collection/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/allebb/collection/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/allebb/collection/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/allebb/collection/?branch=master)
+[![Code Climate](https://codeclimate.com/github/allebb/collection/badges/gpa.svg)](https://codeclimate.com/github/allebb/collection)
 [![Latest Stable Version](https://poser.pugx.org/ballen/collection/v/stable)](https://packagist.org/packages/ballen/collection)
 [![Latest Unstable Version](https://poser.pugx.org/ballen/collection/v/unstable)](https://packagist.org/packages/ballen/collection)
 [![License](https://poser.pugx.org/ballen/collection/license)](https://packagist.org/packages/ballen/collection)
