@@ -1,8 +1,8 @@
 # Collection
 
-[![Build Status](https://travis-ci.org/bobsta63/collection.svg)](https://travis-ci.org/bobsta63/collection)
-[![Code Coverage](https://scrutinizer-ci.com/g/bobsta63/collection/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/collection/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bobsta63/collection/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bobsta63/collection/?branch=master)
+[![Build Status](https://travis-ci.org/allebb/collection.svg)](https://travis-ci.org/allebb/collection)
+[![Code Coverage](https://scrutinizer-ci.com/g/allebb/collection/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/allebb/collection/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/allebb/collection/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/allebb/collection/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/ballen/collection/v/stable)](https://packagist.org/packages/ballen/collection)
 [![Latest Unstable Version](https://poser.pugx.org/ballen/collection/v/unstable)](https://packagist.org/packages/ballen/collection)
 [![License](https://poser.pugx.org/ballen/collection/license)](https://packagist.org/packages/ballen/collection)
