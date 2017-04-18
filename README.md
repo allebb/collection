@@ -67,8 +67,8 @@ I use [TravisCI](https://travis-ci.org/) for continuous integration, which trigg
 If you wish to run the tests yourself you should run the following:
 
 ```shell
-# Install the Collection Library with the 'development' packages this then includes PHPUnit!
-composer install --dev
+# Install the Collection Library
+composer install
 
 
 # Now we run the unit tests (from the root of the project) like so:
