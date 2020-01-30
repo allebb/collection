@@ -215,6 +215,6 @@ class CollectionlTest extends PHPUnit_Framework_TestCase
         if (($random > 0) && ($random <= 10)) {
             $assertion = true;
         }
-        $this->assertTrue($assertion, $random);
+        $this->assertTrue($assertion);
     }
 }
