@@ -15,9 +15,9 @@ This library is developed and maintained by myself for various personal projects
 Requirements
 ------------
 
-This library is developed and tested for PHP 5.3+
+This library is developed and tested for PHP 5.6+
 
-This library is unit tested against PHP 5.3, 5.4, 5.5, 5.6, 7.0, 7.1, 7.2 and 7.3!
+This library is unit tested against PHP 5.6, 7.0, 7.1, 7.2, 7.3 and 7.4!
 
 License
 -------
@@ -41,7 +41,7 @@ Alternatively you can manually add this library to your project using the follow
 
 Then install the package like so:
 
-```composer update ballen/collection --no-dev```
+```composer install --no-dev```
 
 Usage
 -----
@@ -62,7 +62,7 @@ Tests and coverage
 
 This library is fully unit tested using [PHPUnit](https://phpunit.de/).
 
-I use [TravisCI](https://travis-ci.org/) for continuous integration, which triggers tests for PHP 5.3, 5.4, 5.5, 5.6, 7.0 and HHVM every time a commit is pushed.
+I use [TravisCI](https://travis-ci.org/) for continuous integration, which triggers unit tests each time a commit is pushed.
 
 If you wish to run the tests yourself you should run the following:
 
