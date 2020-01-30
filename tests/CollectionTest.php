@@ -1,5 +1,5 @@
 <?php
-use \PHPUnit_Framework_TestCase;
+
 use Ballen\Collection\Collection;
 
 class CollectionlTest extends PHPUnit_Framework_TestCase
@@ -211,7 +211,7 @@ class CollectionlTest extends PHPUnit_Framework_TestCase
     {
         $fruits = new Collection([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
         $random = $fruits->random();
-        $assertion = null;
+        $assertion = false;
         if (($random > 0) && ($random <= 10)) {
             $assertion = true;
         }
