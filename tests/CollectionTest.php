@@ -1,8 +1,9 @@
 <?php
 
 use Ballen\Collection\Collection;
+use PHPUnit\Framework\TestCase;
 
-class CollectionlTest extends PHPUnit_Framework_TestCase
+class CollectionlTest extends TestCase
 {
 
     public function testCreateCollectionFromArray()

@@ -1,11 +1,12 @@
 <?php
+
 namespace Ballen\Collection;
 
 /**
  * Collection
- * 
+ *
  * A Collection class (library) which provides OOP replacement for the
- * traditional array data structure. 
+ * traditional array data structure.
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
  * @license https://opensource.org/licenses/MIT
@@ -16,11 +17,15 @@ namespace Ballen\Collection;
 class CollectionExport
 {
 
+    /**
+     * Array of collection items.
+     * @var array
+     */
     private $collection;
 
     /**
      * Initiate the CollectionExport object.
-     * @param array $collection The collection.
+     * @param array $collection The collection array.
      */
     public function __construct(array $collection)
     {
@@ -47,11 +52,11 @@ class CollectionExport
 
     /**
      * Return the contents of the collection as an stdClass object.
-     * @return stdClass
+     * @return object
      */
     public function toObject()
     {
-        return (object) $this->toArray();
+        return (object)$this->toArray();
     }
 
     /**

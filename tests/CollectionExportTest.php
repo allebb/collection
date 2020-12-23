@@ -1,14 +1,16 @@
 <?php
 
 use Ballen\Collection\Collection;
+use PHPUnit\Framework\TestCase;
 
-class CollectionModelTest extends PHPUnit_Framework_TestCase
+class CollectionExportTest extends TestCase
 {
 
     private $collection;
 
-    public function __construct()
+    public function setUp(): void
     {
+        parent::setUp();
         $this->collection = new Collection(['A' => 'Apple', 'B' => 'Banana', 'C' => 'Cherry', 'D' => 'Date']);
     }
 
@@ -26,6 +28,6 @@ class CollectionModelTest extends PHPUnit_Framework_TestCase
 
     public function testCollectionExportToString()
     {
-        $this->assertEquals('{"A":"Apple","B":"Banana","C":"Cherry","D":"Date"}', (string) $this->collection->all());
+        $this->assertEquals('{"A":"Apple","B":"Banana","C":"Cherry","D":"Date"}', (string)$this->collection->all());
     }
 }

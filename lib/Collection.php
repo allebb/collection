@@ -1,13 +1,14 @@
 <?php
+
 namespace Ballen\Collection;
 
 use ArrayIterator;
 
 /**
  * Collection
- * 
+ *
  * A Collection class (library) which provides OOP replacement for the
- * traditional array data structure. 
+ * traditional array data structure.
  *
  * @author Bobby Allen <ballen@bobbyallen.me>
  * @license https://opensource.org/licenses/MIT
@@ -28,9 +29,9 @@ class Collection
      * Create new instance of a Collection.
      * @param array $items
      */
-    public function __construct($items = null)
+    public function __construct(array $items = [])
     {
-        if (!is_null($items) && is_array($items)) {
+        if (!empty($items)) {
             $this->push($items);
         }
     }
@@ -79,7 +80,7 @@ class Collection
 
     /**
      * Push an item (or array of items) onto the beginning of the collection.
-     * @param  mixed  $item
+     * @param mixed $item
      * @return Collection
      */
     public function prepend($item)
@@ -125,7 +126,7 @@ class Collection
     /**
      * Removes an item from the collection.
      * @param string $key
-     * @return \Ballen\Collection\Collection
+     * @return Collection
      */
     public function remove($key)
     {
