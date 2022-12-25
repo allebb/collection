@@ -16,7 +16,7 @@ Requirements
 
 This library is developed and tested for PHP 7.3+
 
-This library is unit tested against PHP 7.3, 7.4, 8.0 and 8.1!
+This library is unit tested against PHP 7.3, 7.4, 8.0, 8.1 and 8.2!
 
 If you need to use an older version of PHP, you should instead install the 1.x version of this library (see below for details).
 
@@ -72,7 +72,7 @@ composer install
 ./vendor/bin/phpunit
 ```
 
-Code coverage can also be ran but requires XDebug installed...
+Code coverage can also be run but requires XDebug installed...
 
 ```shell
 ./vendor/bin/phpunit --coverage-html ./report
